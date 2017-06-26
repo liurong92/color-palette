@@ -1,6 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: [
@@ -8,7 +9,7 @@ module.exports = {
     'webpack/hot/only-dev-server',
     path.join(__dirname, 'app/scripts/index.js')
   ],
-  output : {
+  output: {
     path : path.join(__dirname, '/dist/'),
     filename: 'app.js',
     publicPath: '/'
@@ -19,35 +20,33 @@ module.exports = {
       inject: 'body',
       filename: 'index.html',
     }),
+    new ExtractTextPlugin({
+      filename: "app.css",
+      allChunks: true
+    }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     })
   ],
-  eslint: {
-    configFile: '.eslintrc',
-    failOnWarning: false,
-    failOnError: false
-  },
   module: {
-    noParse: [],
-    preLoaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel?presets[]=react,presets[]=es2015'
-      }
-    ],
     loaders: [
       {
-        test : /\.js|.jsx$/,
+        test: /\.js|.jsx$/,
         exclude: /node_modules/,
-        loader: 'babel?presets[]=react,presets[]=es2015'
+        loader: "babel-loader",
+        query: {
+          presets:['react']
+        }
       },
       {
-        test: /\.scss/,
-        loader: 'style!css!scss'
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract({ loader: 'css-loader?importLoaders=1' })
+      },
+      {
+        test: /\.(sass|scss)$/,
+        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
       }
     ]
   }

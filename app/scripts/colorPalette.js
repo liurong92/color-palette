@@ -3,7 +3,7 @@ import React from 'react'
 const ColorPalette = React.createClass({
   render() {
     return (
-      <div>ColorPalette liurong test test</div>
+      <div>ColorPalette ddddliurong test test hahaha</div>
     );
   }
 });
