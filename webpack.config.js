@@ -35,18 +35,19 @@ module.exports = {
       {
         test: /\.js|.jsx$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         query: {
           presets:['react']
         }
       },
       {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract({ loader: 'css-loader?importLoaders=1' })
+        test: /\.(sass|scss|css)$/,
+        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
       },
       {
-        test: /\.(sass|scss)$/,
-        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
       }
     ]
   }

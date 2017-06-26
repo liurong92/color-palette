@@ -1,11 +1,11 @@
 import React from 'react'
 
-const ColorPalette = React.createClass({
+class ColorPalette extends React.Component{
   render() {
     return (
       <div>ColorPalette ddddliurong test test hahaha</div>
-    );
+    )
   }
-});
+}
 
-export default ColorPalette;
+export default ColorPalette

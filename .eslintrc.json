@@ -1,0 +1,26 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "globals": {
+    "document": true,
+    "window": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "modules": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "indent": [ "error", 2 ],
+    "quotes": [ "error", "single" ],
+    "semi": [ "error", "never" ]
+  },
+  "extends": [ "eslint:recommended", "plugin:react/recommended" ]
+}
