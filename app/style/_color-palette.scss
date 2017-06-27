@@ -2,22 +2,26 @@
   display: flex;
   flex-wrap: wrap;
 
-  .color-palette-item {
-    width: 80px;
+  &-item {
+    width: 100px;
     height: 100px;
-    margin: 20px 10px;
-    padding: 20px;
-    background: #fafafa;
-    box-shadow: 0px 0px 5px #FAFAFF;
-    text-align: center;
-    border-radius: 5px;
+    margin: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     cursor: pointer;
+    color: white;
 
-    .color-palette-item__color {
-      width: 20px;
-      height: 20px;
-      background: blue;
+    &-color {
+      font-family: Hoefler Text’, Garamond, Georgia, ‘Times New Roman’, Times, serif;
+      padding: 10px;
+      font-size: 18px;
     }
 
+    &-name {
+      font-family: Georgia, "Times New Roman", "FangSong", "仿宋", STFangSong, "华文仿宋", serif;
+      font-size: 16px;
+    }
   }
 }
