@@ -13,6 +13,11 @@
     cursor: pointer;
     color: white;
 
+    &:hover {
+      transform: scale(1.2);
+      z-index: 10;
+    }
+
     &-color {
       font-family: "Times New Roman", "FangSong", "仿宋", "华文仿宋", serif;
       padding: 10px;
