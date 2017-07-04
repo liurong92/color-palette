@@ -12,6 +12,7 @@
     flex-direction: column;
     cursor: pointer;
     color: white;
+    text-align: center;
 
     &:hover {
       transform: scale(1.2);
@@ -19,14 +20,14 @@
     }
 
     &-color {
-      font-family: "Times New Roman", "FangSong", "仿宋", "华文仿宋", serif;
+      font-family: Bellefair;
       padding: 10px;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     &-name {
-      font-family: Georgia, "Times New Roman", "FangSong", "仿宋", STFangSong, "华文仿宋", serif;
-      font-size: 16px;
+      font-family: Novar, "华文仿宋", serif;
+      font-size: 12px;
     }
   }
 }

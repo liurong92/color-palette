@@ -1,3 +1,14 @@
 body {
   font-family: cursive;
 }
+
+@font-face {
+    font-family: Bellefair;
+    src: url('../font/Bellefair-Regular.ttf'),
+         url('../font/Bellefair-Regular.otf');
+}
+
+@font-face {
+    font-family: Novar;
+    src: url('../font/Novar.ttf');
+}
